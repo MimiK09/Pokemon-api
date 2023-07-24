@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Type = (props) => {
 	const params = useParams();
-	// console.log("param", params);
 	const [listType, setListType] = useState([]);
 	const [isLoading, setIsloading] = useState(true);
 
@@ -15,7 +14,6 @@ const Type = (props) => {
 				const response = await axios.get(
 					`https://pokeapi.co/api/v2/type/${params.id}`
 				);
-				// console.log("avant type", response.data);
 				setListType(response.data.pokemon);
 				setIsloading(false);
 			} catch (error) {
@@ -33,16 +31,21 @@ const Type = (props) => {
 			) : (
 				<div className="list-pokemons">
 					{listType.map((element) => {
-						console.log("url", element.pokemon.url)
 						const idpart = element.pokemon.url.split("/");
 						const id = idpart[idpart.length - 2];
-						console.log("id", id)
+
 						return (
-							<Link to={`/pokemon/${element.pokemon.name}`} className="link-router">
+							<Link
+								to={`/pokemon/${element.pokemon.name}`}
+								className="link-router"
+							>
 								<div className="tuile-pokemons" key={element.pokemon.name}>
 									<h3>{element.pokemon.name}</h3>
 									<div>
-										<img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt={element.pokemon.name} />
+										<img
+											src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+											alt={element.pokemon.name}
+										/>
 									</div>
 								</div>
 							</Link>

@@ -23,12 +23,11 @@ const Types = (props) => {
 			<h2>Types</h2>
 			<div className="list-types">
 				{listTypes.map((element) => {
-					console.log("tuile", element);
 					return (
 						<Link to={`/type/${element.name}`} className="link-router">
-							
-								<p className="tag-types" key={element.name}>{element.name}</p>
-							
+							<p className="tag-types" key={element.name}>
+								{element.name}
+							</p>
 						</Link>
 					);
 				})}

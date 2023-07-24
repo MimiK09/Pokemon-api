@@ -15,10 +15,10 @@ p {
 }
 
 .container {
-	width: 1000px;
+	max-width: 1000px;
 	margin: 0 auto;
 	background-color: white;
-
+  padding: 10px 0;;
 }
 
 h1 {
@@ -160,4 +160,15 @@ header .container > div {
 	align-items: center;
   gap : 30px;
   margin : 5px auto;
+}
+
+/**FOOTER**/
+footer .container {
+display:flex;
+justify-content: center;
+align-items: center;
+height: 30px;
+}
+footer p {
+  font-weight: bold;
 }

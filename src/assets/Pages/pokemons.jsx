@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -11,7 +10,7 @@ const Pokemons = (props) => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
-				console.log("avant", response.data.results);
+				console.log("réponse API .data", response.data.results);
 				const results = response.data.results;
 				setListPokemons(results);
 				setIsloading(false);
@@ -30,8 +29,6 @@ const Pokemons = (props) => {
 			) : (
 				<div className="list-pokemons">
 					{listPokemons.map((element, index) => {
-						// console.log("tuile", element);
-						// console.log("index", index);
 						return (
 							<Link to={`/pokemon/${element.name}`} className="link-router">
 								<div className="tuile-pokemons" key={element.name}>

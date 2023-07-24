@@ -7,7 +7,6 @@ const Pokemon = (props) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsloading] = useState(true);
 	const params = useParams();
-	console.log("param", params);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -15,7 +14,7 @@ const Pokemon = (props) => {
 				const response = await axios.get(
 					`https://pokeapi.co/api/v2/pokemon/${params.name}`
 				);
-				console.log("avant", response.data);
+				console.log("réponse API .data", response.data);
 				setData(response.data);
 				setIsloading(false);
 			} catch (error) {
@@ -26,11 +25,8 @@ const Pokemon = (props) => {
 	}, []);
 
 	const getImage = (string) => {
-		console.log("string", string);
 		const idpart = string.split("/");
-		console.log("idpart", idpart);
 		const id = idpart[idpart.length - 2];
-		console.log("id", id);
 		const finalUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 		return finalUrl;
 	};
@@ -52,7 +48,9 @@ const Pokemon = (props) => {
 						{data.types.map((element) => {
 							return (
 								<Link to={`/type/${element.type.name}`} className="link-router">
-									<p key={element.type.name} className="tag-types">{element.type.name}</p>
+									<p key={element.type.name} className="tag-types">
+										{element.type.name}
+									</p>
 								</Link>
 							);
 						})}
