@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+#root {
+	font-family: "Nintendo U", sans-serif;
+}
+
+html {
+	font-size: 62.5%; /* Ré-équilibrage du `rem` face au `px` pour des calculs simples */
+	background-color: red;
+}
+
+p {
+	font-size: 12px; /* Pour les navigateurs qui ne supportent pas le rem */
+	font-size: 1.2rem; /* Pour les navigateurs « Responsive » */
+}
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+
+}
+
+h1 {
+	font-size: 5rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 3rem;
+	font-weight: bold;
+  padding : 5px;
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+  padding : 5px;
+}
+
+.link-router{
+  text-decoration: none;
+  color:black;
+}
+
+/** HEADER **/
+header .logo {
+	width: 80px;
+	height: 30px;
+	overflow: hidden;
+	margin: 10px 20px;
+}
+
+.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+header .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+header .container > div {
+	display: flex;
+	gap: 10px;
+	font-weight: bold;
+	align-items: center;
+	margin: 10px 20px;
+}
+
+/** HOME **/
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+  margin : 5px auto;
+}
+
+
+/** POKEMONS **/
+.pokemons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+  gap : 30px;
+  height: 100vh;
+  margin : 5px auto;
+}
+
+.list-pokemons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  gap : 10px;
+}
+
+.tuile-pokemons {
+  display: flex;
+  flex-direction: column;
+	align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+/** POKEMON **/
+
+.pokemons-container>div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap : 10px;
+}
+
+.list-types-pokemon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap : 10px;
+}
+
+.tag-types{
+  padding:5px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+/** TYPES **/
+.types-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+  gap : 30px;
+  height: 100vh;
+  margin : 5px auto;
+}
+
+.list-types{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  gap : 10px;
+}
+
+/** TYPE **/
+.type-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+  gap : 30px;
+  margin : 5px auto;
+}
